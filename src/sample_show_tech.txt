@@ -1,0 +1,1427 @@
+Router#show tech
+
+------------------ show clock ------------------
+
+
+*19:45:27.692 UTC Tue Feb 27 2018
+
+------------------ show switch ------------------
+
+
+
+------------------ show module ------------------
+
+
+
+------------------ show version ------------------
+
+Cisco IOS XE Software, Version 2023-05-26_12.20_shubsaxe
+Cisco IOS Software [Dublin], c8000aep Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Experimental Version 17.13.20230526:060630 [BLD_POLARIS_DEV_S2C_20230503_060106-2-g257f7e97140f:/nobackup/shubsaxe/polaris_CSCwf28251 102]
+Copyright (c) 1986-2023 by Cisco Systems, Inc.
+Compiled Fri 26-May-23 11:38 by shubsaxe
+
+
+Cisco IOS-XE software, Copyright (c) 2005-2023 by cisco Systems, Inc.
+All rights reserved.  Certain components of Cisco IOS-XE software are
+licensed under the GNU General Public License ("GPL") Version 2.0.  The
+software code licensed under GPL Version 2.0 is free software that comes
+with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such
+GPL code under the terms of GPL Version 2.0.  For more details, see the
+documentation or "License Notice" file accompanying the IOS-XE software,
+or the applicable URL provided on the flyer accompanying the IOS-XE
+software.
+
+
+ROM: ACEROM_V13_SB_220224
+Router uptime is 2 weeks, 1 hour, 43 minutes
+Uptime for this control processor is 2 weeks, 1 hour, 45 minutes
+System returned to ROM by Reload Command
+System image file is "bootflash:c8000aep-universalk9.2023-05-26_12.20_shubsaxe.SSA.bin"
+Last reload reason: Reload Command
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+License Type: Perpetual
+License Level: network-advantage
+Next reload license Level: network-advantage
+License Type: Subscription
+License Level:
+Next reload license Level:
+The current crypto throughput level is 50000000 kbps (Aggregate)
+
+
+Smart Licensing Status: Smart Licensing Using Policy
+
+cisco C8500-20X6C (ACE) processor (revision ACE) with 14949229K/6147K bytes of memory.
+Processor board ID FOX2540P4BG
+Router operating mode: Autonomous
+20 Ten Gigabit Ethernet interfaces
+6 Hundred Gigabit Ethernet interfaces
+32768K bytes of non-volatile configuration memory.
+67108864K bytes of physical memory.
+26763263K bytes of eUSB flash at bootflash:.
+234365527K bytes of SATA hard disk at harddisk:.
+
+Configuration register is 0x0
+
+
+------------------ show running-config ------------------
+
+
+Building configuration...
+
+Current configuration : 8032 bytes
+!
+! Last configuration change at 19:18:20 UTC Tue Feb 27 2018
+!
+version 17.13
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service internal
+service call-home
+service unsupported-transceiver
+platform qfp utilization monitor load 80
+platform punt-keepalive disable-kernel-core
+!
+hostname Router
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition Mgmt-intf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+no logging console
+no aaa new-model
+!
+!
+subscriber templating
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+multilink bundle-name authenticated
+!
+!
+crypto pki trustpoint SLA-TrustPoint
+ enrollment pkcs12
+ revocation-check crl
+ hash sha256
+!
+crypto pki trustpoint TP-self-signed-2183686274
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2183686274
+ revocation-check none
+ rsakeypair TP-self-signed-2183686274
+ hash sha256
+!
+!
+crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01
+  3082031B 30820203 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030
+  2F310E30 0C060355 040A1305 43697363 6F311D30 1B060355 04031314 4C696365
+  6E73696E 6720526F 6F74202D 20444556 301E170D 31333034 32343231 35353433
+  5A170D33 33303432 34323135 3534335A 302F310E 300C0603 55040A13 05436973
+  636F311D 301B0603 55040313 144C6963 656E7369 6E672052 6F6F7420 2D204445
+  56308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 0A028201
+  01009C56 7101D61E DF2EBCC3 BA7AE0DB B241B3B4 328A9B00 EB8A80D0 2AA86F5E
+  F1AEBFDE B67BD6AD 7DAD7B43 F582753B FFCC1CA5 A7841A07 6934D3AF 99078EF6
+  179196FA 4FB3F2ED 3942C756 BF1CA0A9 CC98A7A7 F9E43724 D9E61D47 89E9E792
+  DD9F27B4 517C2BDE D0EB5B9A 787BA085 D9BBF003 F0563BE0 A4450C8F 127B5583
+  3EBC1385 2D9BAD98 68D3AE07 5C27987C 6B814B99 0686B14A 5F61753C 813089E6
+  AEC48C68 F6D45267 0E365F44 B4456E11 96DCB950 233C8ADB 9FEEBAF1 2B5F3BB6
+  7CE521B5 F277EBF6 03B7B0A4 958C9C7D 5460C20B CF9CCFC7 14B80F58 B5268947
+  6D081172 26916B41 FB07DF42 EB9B9408 EC346138 23FBD8C4 19909697 A30845F3
+  01C50203 010001A3 42304030 0E060355 1D0F0101 FF040403 02010630 0F060355
+  1D130101 FF040530 030101FF 301D0603 551D0E04 16041443 214521B5 FB217A1A
+  4D1BB702 36E664CB EC8B6530 0D06092A 864886F7 0D01010B 05000382 01010085
+  F1B1F2AE AE7D2F9C AB0351C3 29E3F1AE 982DF11F 5E3C90F6 00B3CDED 5A1491FB
+  DF07E06C AA0F4325 9FB4C4AE 2080F675 8C3B7AC5 4EAAA03E C5B50A2F 670AFF87
+  EDA6462F CFC43967 C024AB32 EE3CCDCF A04B9DAE 1BBABBDA C8DF5587 CF51CB1C
+  005A282F 8B518A5A 8C6F9B3C AABA3446 32EF3A75 C2F45450 7A9BCFD3 0C8BE54A
+  11872DE0 CF1200D0 D1018FD9 AC685968 167E421C 9BC394ED 9BC85463 83B28146
+  07B2BDED DFC1605B 4D16007B 68723E25 55908512 4EEB0A70 B2A74C2A CB1EC882
+  C3215B87 6FC74304 241E59D7 C7C02C6D BD3042F5 196E8133 7A4446A4 81216E70
+  CF52CF22 50A7D23E FA9F6B07 FB0F6386 9DCC3BBC 65250693 38CF6BA6 CB8EFD
+        quit
+crypto pki certificate chain TP-self-signed-2183686274
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030
+  31312F30 2D060355 04030C26 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 32313833 36383632 3734301E 170D3138 30323031 30313132
+  32355A17 0D323830 32303130 31313232 355A3031 312F302D 06035504 030C2649
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 31383336
+  38363237 34308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201
+  0A028201 0100B914 E0E62C88 9E599514 796D4297 752832D6 F4B2DF85 723BAD8D
+  2C52E433 6A218511 59FEF4AF C609C726 CC3D269F F882656E 74446774 D1E24AF1
+  E5EAD947 A92F2990 64ECDF3B EBC6DE37 A52A01AC 25C6896D 56E47EA9 2A441411
+  25666BF2 B562CA76 3F24A34F 1ECAE0D0 04A1225D E777A51B 5B293EE1 9592ACE0
+  8AC733F4 F87664C0 4238EEFB BECD00A5 D797074D C8E6DAB4 E4AA49F5 96B93C9A
+  2B77B31D C186A386 6E3506C0 A3CD2F01 B2426F6A 60561C33 BE06673C D440D6A9
+  83E1E84E 2CB6192F FF854426 FC06A55A B50A1743 E1E2633B 4C0910CB 51CEA153
+  7B1C6114 C4A31824 8C186F60 6CE84048 E7A3EDC4 B453D6A1 0F568E19 B7C08438
+  3B5DE925 8CA10203 010001A3 53305130 1D060355 1D0E0416 0414D69F A1EBC38A
+  351F761C 7D8204C4 95ED8C03 EC3C301F 0603551D 23041830 168014D6 9FA1EBC3
+  8A351F76 1C7D8204 C495ED8C 03EC3C30 0F060355 1D130101 FF040530 030101FF
+  300D0609 2A864886 F70D0101 0B050003 82010100 472C9B1D 005DBC18 3DEE1EF5
+  93B71017 4D128747 271B6116 002CD9F0 0A119BBE AEED88E8 C9389085 7B820004
+  19CAEE69 BF258153 895CA522 8F64519C 185AC744 B7834CBA 1FD845C6 E00B235E
+  F2E91BC0 33933D3F 7D1896A7 0EB4ECC8 B9D8DD2E 7333EF3A DF00BEBF 2B003A5C
+  886F9804 6A647F79 8BE6F7A7 5493AFD7 14D78E1B 536E9093 C7E19098 54A3B6E1
+  64615D5C 92CB1ACD 633C6F47 87414A40 7F268816 F00B551A BC8A0F58 99121F9D
+  0B080526 A2C2F6A6 9816392F F215332E D10A958C 37D4D610 BD8C950C 28948C16
+  09CB5923 6522C2BD AFF90656 4FAC7212 CE2BA3FE C10CBD06 F77679B4 820943E0
+  C79222C4 7E2F97C8 FABF0D83 3A530CDF 91D36890
+        quit
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid C8500-20X6C sn FOX2540P4BG
+license boot level network-advantage
+!
+memory free low-watermark processor 1494664
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+!
+!
+redundancy
+ mode none
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface TenGigabitEthernet0/0/0
+ no ip address
+ shutdown
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/1
+ ip address 1.1.1.1 255.255.255.0
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/2
+ no ip address
+ shutdown
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/3
+ ip address 2.2.2.1 255.255.255.0
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/4
+ no ip address
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/5
+ no ip address
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/6
+ no ip address
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/7
+ no ip address
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/8
+ no ip address
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/9
+ no ip address
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/10
+ no ip address
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/11
+ no ip address
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/12
+ no ip address
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/13
+ ip address 3.3.3.1 255.255.255.0
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/14
+ no ip address
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/15
+ no ip address
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/16
+ no ip address
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/17
+ no ip address
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/18
+ no ip address
+ no negotiation auto
+!
+interface TenGigabitEthernet0/0/19
+ no ip address
+ no negotiation auto
+!
+interface HundredGigE0/1/0
+ no ip address
+ no negotiation auto
+!
+interface HundredGigE0/1/1
+ no ip address
+ shutdown
+ no negotiation auto
+!
+interface HundredGigE0/1/2
+ ip address 4.4.4.1 255.255.255.0
+ no negotiation auto
+!
+interface HundredGigE0/1/3
+ no ip address
+ no negotiation auto
+!
+interface HundredGigE0/1/4
+ no ip address
+ no negotiation auto
+!
+interface HundredGigE0/1/5
+ no ip address
+ no negotiation auto
+!
+interface GigabitEthernet0
+ vrf forwarding Mgmt-intf
+ ip address 172.18.41.170 255.255.255.0
+ negotiation auto
+!
+ip forward-protocol nd
+!
+ip tftp source-interface GigabitEthernet0
+ip tftp blocksize 8192
+no ip http server
+ip http secure-server
+ip ssh bulk-mode 131072
+ip route vrf Mgmt-intf 0.0.0.0 0.0.0.0 172.18.41.1
+ip route vrf Mgmt-intf 172.18.14.130 255.255.255.255 172.18.41.1
+!
+!
+!
+snmp-server community <removed> RO
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line aux 0
+line vty 0 4
+ login
+ transport input ssh
+!
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+!
+!
+!
+!
+!
+!
+end
+
+
+------------------ show redundancy states ------------------
+
+       my state = 13 -ACTIVE
+     peer state = 1  -DISABLED
+           Mode = Simplex
+           Unit = Primary
+        Unit ID = 48
+
+Redundancy Mode (Operational) = Non-redundant
+Redundancy Mode (Configured)  = Non-redundant
+Redundancy State              = Non Redundant
+     Maintenance Mode = Disabled
+    Manual Swact = disabled (system is simplex (no peer unit))
+ Communications = Down      Reason: Simplex mode
+
+   client count = 135
+ client_notification_TMR = 30000 milliseconds
+           RF debug mask = 0x0
+
+
+------------------ show redundancy switchover history ------------------
+
+
+
+------------------ show stacks ------------------
+
+
+Minimum process stacks:
+ Free/Size   Name
+21904/24000  License IPC Master Port Process
+21904/24000  ISSU Infra API Delayed Registration Process
+21904/24000  CDP BLOB
+33744/36000  PMIPV6 Thread
+45584/48000  MRIB IPv4 Init Process
+45696/48000  MRIB IPv6 Init Process
+21904/24000  AAA HA Acct Proc
+16048/24000  MGMT VRF Process
+20000/24000  EEM Shell Director
+20480/24000  onep event service init
+13360/24000  Onep Start Task
+21216/24000  MGMTE route add Process
+21904/24000  openresty PKI server Process
+21904/24000  Inspect Init Msg
+21760/24000  SPAN Subsystem
+44992/48000  EEM Callback Thread
+19408/24000  IOSXE LIIN config
+21776/24000  WEBUI CONFIG SEND PROC
+236336/240000  EEM Auto Registration Proc
+ 9904/12000  LIM WAVL
+21904/24000  SASL MAIN
+93056/96000  IOSd Orchestrator Proces
+45904/48000  Router Init
+237344/240000  script background loader
+20784/24000  Platform Authentication process
+33024/48000  Virtual Exec
+33824/48000  Init
+21616/24000  RADIUS INITCONFIG
+21696/24000  BSOCK SAR Service Process
+43584/48000  PnP Agent Discovery
+19680/24000  IPC ISSU Versioning Process
+20064/24000  IPC ISSU Receive Process
+21384/24000  RTTY Client Registration
+ 9904/12000  state_change
+14512/24000  ch_check_profile_url
+44016/48000  HTTP SSL PKI CERTIFICATE CREATE PROC
+45488/48000  IPRM
+ 9792/12000  Rom Random Update Process
+21744/24000  URPF stats
+38072/48000  Exec
+13392/24000  Call Home EEM cb
+42272/48000  SSH Process
+90032/96000  HTTP CP
+228272/240000  Tcl Serv - tty0
+
+Interrupt level stacks:
+Level    Called Unused/Size  Name
+  2           0 174560/196608  Packet Thread
+  3           0 168616/196608  Fastpath Thread
+  4           0 173752/196608  Aux Thread
+  5           0 196608/196608  Worker1 Thread
+  6           0 196608/196608  Worker2 Thread
+
+------------------ show interfaces ------------------
+
+
+TenGigabitEthernet0/0/0 is administratively down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b63 (bia 14a2.a00a.3b63)
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 1000Mbps, link type is force-up, media type is SX
+  output flow-control is unsupported, input flow-control is unsupported
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+TenGigabitEthernet0/0/1 is up, line protocol is up
+  Hardware is 20xSFP+, address is 14a2.a00a.3b64 (bia 14a2.a00a.3b64)
+  Internet address is 1.1.1.1/24
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 1000Mbps, link type is force-up, media type is SX
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output 00:50:47, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     1460 packets output, 118580 bytes, 0 underruns
+     Output 1460 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     3 carrier transitions
+TenGigabitEthernet0/0/2 is administratively down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b65 (bia 14a2.a00a.3b65)
+  MTU 1500 bytes, BW 10000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 10000Mbps, link type is force-up, media type is 10GBase-SR
+  output flow-control is unsupported, input flow-control is unsupported
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+TenGigabitEthernet0/0/3 is down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b66 (bia 14a2.a00a.3b66)
+  Internet address is 2.2.2.1/24
+  MTU 1500 bytes, BW 10000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 10000Mbps, link type is force-up, media type is 10GBase-SR
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+TenGigabitEthernet0/0/4 is down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b67 (bia 14a2.a00a.3b67)
+  MTU 1500 bytes, BW 10000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 10000Mbps, link type is force-up, media type is unknown media type
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 1 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+TenGigabitEthernet0/0/5 is down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b68 (bia 14a2.a00a.3b68)
+  MTU 1500 bytes, BW 10000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 10000Mbps, link type is force-up, media type is unknown media type
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 1 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+TenGigabitEthernet0/0/6 is down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b69 (bia 14a2.a00a.3b69)
+  MTU 1500 bytes, BW 10000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 10000Mbps, link type is force-up, media type is unknown media type
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 1 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+TenGigabitEthernet0/0/7 is down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b6a (bia 14a2.a00a.3b6a)
+  MTU 1500 bytes, BW 10000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 10000Mbps, link type is force-up, media type is unknown media type
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 1 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+TenGigabitEthernet0/0/8 is down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b6b (bia 14a2.a00a.3b6b)
+  MTU 1500 bytes, BW 10000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 10000Mbps, link type is force-up, media type is unknown media type
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 1 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+TenGigabitEthernet0/0/9 is down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b6c (bia 14a2.a00a.3b6c)
+  MTU 1500 bytes, BW 10000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 10000Mbps, link type is force-up, media type is unknown media type
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 1 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+TenGigabitEthernet0/0/10 is down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b6d (bia 14a2.a00a.3b6d)
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 1000Mbps, link type is force-up, media type is SX
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+TenGigabitEthernet0/0/11 is down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b6e (bia 14a2.a00a.3b6e)
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 1000Mbps, link type is force-up, media type is SX
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+TenGigabitEthernet0/0/12 is down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b6f (bia 14a2.a00a.3b6f)
+  MTU 1500 bytes, BW 10000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 10000Mbps, link type is force-up, media type is 10GBase-SR
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+TenGigabitEthernet0/0/13 is up, line protocol is up
+  Hardware is 20xSFP+, address is 14a2.a00a.3b70 (bia 14a2.a00a.3b70)
+  Internet address is 3.3.3.1/24
+  MTU 1500 bytes, BW 10000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 10000Mbps, link type is force-up, media type is 10GBase-SR
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output 00:51:10, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     1460 packets output, 118580 bytes, 0 underruns
+     Output 1460 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     5 carrier transitions
+TenGigabitEthernet0/0/14 is down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b71 (bia 14a2.a00a.3b71)
+  MTU 1500 bytes, BW 10000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 10000Mbps, link type is force-up, media type is 10GBase-SR
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+TenGigabitEthernet0/0/15 is down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b72 (bia 14a2.a00a.3b72)
+  MTU 1500 bytes, BW 10000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 10000Mbps, link type is force-up, media type is 10GBase-SR
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+TenGigabitEthernet0/0/16 is down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b73 (bia 14a2.a00a.3b73)
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 1000Mbps, link type is force-up, media type is SX
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+TenGigabitEthernet0/0/17 is down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b74 (bia 14a2.a00a.3b74)
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 1000Mbps, link type is force-up, media type is SX
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+TenGigabitEthernet0/0/18 is down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b75 (bia 14a2.a00a.3b75)
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 1000Mbps, link type is force-up, media type is T
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     2 carrier transitions
+TenGigabitEthernet0/0/19 is down, line protocol is down
+  Hardware is 20xSFP+, address is 14a2.a00a.3b76 (bia 14a2.a00a.3b76)
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 1000Mbps, link type is force-up, media type is T
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     2 carrier transitions
+HundredGigE0/1/0 is down, line protocol is down
+  Hardware is 6xQSFP, address is 14a2.a00a.3b83 (bia 14a2.a00a.3b83)
+  MTU 1500 bytes, BW 100000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 100000Mbps, link type is force-up, media type is QSFP_100GE_SR
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+HundredGigE0/1/1 is administratively down, line protocol is down
+  Hardware is 6xQSFP, address is 14a2.a00a.3b84 (bia 14a2.a00a.3b84)
+  MTU 1500 bytes, BW 40000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 40000Mbps, link type is force-up, media type is QSFP_40GE_SR_S
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 3 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     3 carrier transitions
+HundredGigE0/1/2 is up, line protocol is up
+  Hardware is 6xQSFP, address is 14a2.a00a.3b85 (bia 14a2.a00a.3b85)
+  Internet address is 4.4.4.1/24
+  MTU 1500 bytes, BW 100000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 107/255, rxload 182/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 100000Mbps, link type is force-up, media type is QSFP_100GE_SR
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input 03:50:54, output 00:00:00, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/563/0 (size/max/drops/flushes); Total output drops: 73047393367387
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 71426923000 bits/sec, 148806086 packets/sec
+  5 minute output rate 42000942000 bits/sec, 87501957 packets/sec
+     180926789756102 packets input, 10855607385366144 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     3501270954 input errors, 0 CRC, 0 frame, 3501270954 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     106381149070781 packets output, 6382868959222737 bytes, 0 underruns
+     Output 1064 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     5 carrier transitions
+HundredGigE0/1/3 is down, line protocol is down
+  Hardware is 6xQSFP, address is 14a2.a00a.3b86 (bia 14a2.a00a.3b86)
+  MTU 1500 bytes, BW 40000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 40000Mbps, link type is force-up, media type is QSFP_40GE_SR_S
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     4 carrier transitions
+HundredGigE0/1/4 is up, line protocol is up
+  Hardware is 6xQSFP, address is 14a2.a00a.3b87 (bia 14a2.a00a.3b87)
+  MTU 1500 bytes, BW 100000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 100000Mbps, link type is force-up, media type is QSFP_100GE_SR
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     7 carrier transitions
+HundredGigE0/1/5 is down, line protocol is down
+  Hardware is 6xQSFP, address is 14a2.a00a.3b88 (bia 14a2.a00a.3b88)
+  MTU 1500 bytes, BW 100000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  Full Duplex, 100000Mbps, link type is force-up, media type is QSFP_100GE_SR
+  output flow-control is on, input flow-control is on
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     0 packets output, 0 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+GigabitEthernet0 is up, line protocol is up
+  Hardware is RP management port, address is 14a2.a00a.3ba3 (bia 14a2.a00a.3ba3)
+  Internet address is 172.18.41.170/24
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full Duplex, 1000Mbps, link type is auto, media type is RJ45
+  output flow-control is unsupported, input flow-control is unsupported
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input 00:00:00, output 00:00:15, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 5000 bits/sec, 3 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     4708436 packets input, 814404250 bytes, 0 no buffer
+     Received 1846765 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     108644 packets output, 6998285 bytes, 0 underruns
+     Output 0 broadcasts (0 IP multicasts)
+     0 output errors, 0 collisions, 0 interface resets
+     22528 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+
+------------------ show interfaces history ------------------
+
+
+
+------------------ show controllers ------------------
+
+
+TenGigabitEthernet0/0/0
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/1
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/2
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/3
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/4
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/5
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/6
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/7
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/8
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/9
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/10
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/11
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/12
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/13
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/14
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/15
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/16
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/17
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/18
+     0 input vlan errors
+     0 Number of sub-interface configured
+TenGigabitEthernet0/0/19
+     0 input vlan errors
+     0 Number of sub-interface configured
+HundredGigE0/1/0
+     0 input vlan errors
+     0 Number of sub-interface configured
+HundredGigE0/1/1
+     0 input vlan errors
+     0 Number of sub-interface configured
+HundredGigE0/1/2
+     0 input vlan errors
+     0 Number of sub-interface configured
+HundredGigE0/1/3
+     0 input vlan errors
+     0 Number of sub-interface configured
+HundredGigE0/1/4
+     0 input vlan errors
+     0 Number of sub-interface configured
+HundredGigE0/1/5
+     0 input vlan errors
+     0 Number of sub-interface configured
+
+------------------ show user ------------------
+
+
+    Line       User       Host(s)              Idle       Location
+*  0 con 0                idle                 00:01:56
+
+  Interface    User               Mode         Idle     Peer Address
+
+
+------------------ show data-corruption ------------------
+
+
+No data inconsistency errors have been recorded.
+
+
+------------------ show file systems ------------------
+
+
+File Systems:
+
+       Size(b)       Free(b)      Type  Flags  Prefixes
+             -             -    opaque     rw   system:
+             -             -    opaque     rw   tmpsys:
+*  26975526912   17568641024      disk     rw   bootflash: flash: crashinfo:
+  236222914560  221202997248      disk     rw   harddisk:
+   32628674560   32443031552      disk     ro   webui:
+             -             -   network     rw   tftp:
+             -             -    opaque     rw   null:
+             -             -    opaque     ro   tar:
+             -             -    opaque     wo   syslog:
+      33554432      33530141     nvram     rw   nvram:
+             -             -   network     rw   rcp:
+             -             -   network     rw   pram:
+             -             -   network     rw   ftp:
+             -             -   network     rw   http:
+             -             -   network     rw   scp:
+             -             -   network     rw   sftp:
+             -             -   network     rw   https:
+             -             -    opaque     ro   cns:
+
+
+------------------ show file descriptors ------------------
+
+
+File Descriptors:
+
+  No open file descriptors
+
+
